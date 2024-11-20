@@ -4,6 +4,7 @@ import os
 from tqdm import tqdm
 
 from insightface.app import FaceAnalysis
+from report_analysis import generate_summary
 
 def detect_emotions(video_path, output_path):
     # Capturar vídeo do arquivo especificado
@@ -23,6 +24,9 @@ def detect_emotions(video_path, output_path):
     # Definir o codec e criar o objeto VideoWriter
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec para MP4
     out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
+
+    # Inicializar dicionário para contabilizar emoções
+    emotion_counts = {}
 
     app = FaceAnalysis()
     app.prepare(ctx_id=0)  # Use ctx_id=-1 for CPU
@@ -60,11 +64,19 @@ def detect_emotions(video_path, output_path):
                 dominant_emotion = "Error"
                 print(f"Error analyzing emotion: {e}")
 
+            # Atualizar contador de emoções
+            if dominant_emotion not in emotion_counts:
+                emotion_counts[dominant_emotion] = 0
+            emotion_counts[dominant_emotion] += 1
+
             cv2.putText(frame, dominant_emotion, (box[0], box[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 255), 2)
 
         # Escrever o frame processado no arquivo de vídeo de saída   
         out.write(frame)
 
+    # Chamar a função para gerar o relatório
+    generate_summary(emotion_counts, total_frames, output_path)
+  
     # Liberar a captura de vídeo e fechar todas as janelas
     cap.release()
     out.release()
