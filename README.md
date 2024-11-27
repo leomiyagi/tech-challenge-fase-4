@@ -33,4 +33,7 @@ Devido a característica do vídeo e também após experimentar várias bibliote
 
 ## Mãos levadas a face
 
-## Aperto de mão
+## Aperto de mão (YOLOv11 + Roboflow)
+
+- YOLOv11 (You Only Look Once) - Fine-Tune Aperto de Mão
+- Dataset handshae https://universe.roboflow.com/meerab-z/handshake/dataset/2
