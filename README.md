@@ -32,7 +32,8 @@ Em termos praticos, já conseguimos com o Insightface criar o Boundary Box das f
 Para determinar se estava sobreposto, validavamos as coordenadas x e y de cada uma das Boundary Boxes, e se a sobreposição de um dos vetores fosse superior a 50% do outro, é detectado uma sobreposicao, consequentemente uma possivel falha na leitura.
 
 Além disso, conseguimos identificar quantas faces por frame existiam, quantos frames sem faces, e buscar os landmarks de braços, a partir dos keypoints/ landmarks existentes, para detectar movimentos, mas não foram 100% satisfatórios, e com a possibilidade de fazer um treino especifico para identificar ações em especificas, como um Handshake ou Escrita/uso de telefone, decidimos utilizar uma segunda abordagem com base no YoloV11
-  
+
+ O link para o video Final do processamento a partir do notebook se encontra em: https://youtu.be/RhMpYr0fa7w
 
 # Detecção de Movimentos Corporais
 
