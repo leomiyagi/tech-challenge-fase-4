@@ -38,7 +38,6 @@ Além disso, conseguimos identificar quantas faces por frame existiam, quantos f
 
 Devido a característica do vídeo e também após experimentar várias bibliotecas de detecção de movimento corporal (Open Pose, Mediapipe, YoLo, Deepsort), concluímos que para esse Tech Challenge, nos concentraríamos em alguns movimentos pré-determinados e nos propomos a tentar detectá-los.
 
-## Mãos levadas a face
 
 ## Aperto de mão (YOLOv11 + Roboflow)
 
