@@ -1,0 +1,12 @@
+Total de frames analisados: 3326
+
+Resumo das emoções detectadas:
+fear: 1100 ocorrências)
+angry: 290 ocorrências)
+neutral: 695 ocorrências)
+sad: 1494 ocorrências)
+surprise: 195 ocorrências)
+happy: 922 ocorrências)
+disgust: 1 ocorrências)
+
+Número de anomalias detectadas: 0
